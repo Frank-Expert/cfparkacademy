@@ -1,0 +1,383 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header {
+    background-color: #0044cc;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    display: flex; /* Align logo and nav in a row */
+    justify-content: space-between; /* Space between logo and social icons */
+    align-items: center; /* Center vertically */
+    position: relative; /* Establish a positioning context */
+}
+
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: auto; /* Push hamburger to the far right */
+}
+
+.hamburger i {
+    font-size: 2rem; /* Hamburger icon size */
+    color: white; /* Icon color */
+}
+
+.social-icons img {
+    width: 20px;
+    margin-left: 10px;
+}
+
+
+.social-icons {
+    display: flex; /* Align icons in a row */
+    align-items: center; /* Center align the icons vertically */
+}
+
+.social-icons a {
+    color: white; /* Icon color */
+    margin-left: 35px; /* Space between icons */
+    font-size: 1.5rem; /* Size of the icons */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.social-icons a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+
+/* Hero Section with Individual Sliding Animation */
+#hero {
+    position: relative;
+    overflow: hidden;
+    color: #eef8f8;
+    text-align: center;
+    height: 300px; /* Adjust height to match the images */
+}
+
+.hero-content {
+    display: flex;
+    width: 400%; /* Adjust width based on the number of images */
+    animation: slideHero 12s infinite; /* Adjust duration as needed */
+}
+
+.hero-content div {
+    flex: 0 0 25%; /* Ensures each image takes up equal space */
+    height: 300px; /* Match height of the hero section */
+}
+
+.hero-content img {
+    width: 100%;
+    height: 100%; /* Match height for full cover */
+    object-fit: cover;
+}
+
+
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: absolute; /* Positioning to keep it on top of images */
+    bottom: 20%; /* Adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text */
+    z-index: 1; /* Ensure text appears above images */
+}
+
+#hero button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Positioning to keep it on top of images */
+    bottom: 10%; /* Adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button */
+    z-index: 1; /* Ensure button appears above images */
+}
+
+#hero button:hover {
+    background-color: #ff9900;
+}
+
+/* Register Section Styling */
+#register {
+
+    color: white; /* Text color */
+    text-align: center; /* Center-align text */
+    padding: 60px 20px; /* Padding for the section */
+}
+
+.register {
+    margin: 0 auto; /* Center the content */
+    display: inline-block; /* Keep the button inline */
+}
+
+.register button {
+    background-color: #ffcc00; /* Button background color */
+    color: #353d3d; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px 30px; /* Padding for the button */
+    font-size: 1.2rem; /* Button font size */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.register button:hover {
+    background-color: #ff9900; /* Change background color on hover */
+}
+
+/* Section Styling */
+#quick-links, #featured {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: white;
+}
+
+.link-item, .featured-item {
+    flex: 1;
+    margin: 0 15px;
+    padding: 20px;
+    background-color: #ada8a8;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.link-item:hover, .featured-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Equal Image Sizes for Consistency */
+.link-item img, .featured-item img, .gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Gallery Section with Individual Sliding Animation */
+#gallery {
+    padding: 40px;
+    text-align: center;
+    overflow: hidden; /* Ensure overflow is hidden */
+    height: 200px; /* Adjust height for gallery images */
+}
+
+.gallery-content {
+    display: flex;
+    width: 400%; /* Adjust width based on the number of images */
+    animation: slideGallery 12s infinite; /* Adjust duration as needed */
+}
+
+.gallery-item {
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    margin: 15px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 200px; /* Fixed width for gallery images */
+    height: 200px; /* Fixed height for gallery images */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@keyframes slideGallery {
+    0%, 20% {
+        transform: translateX(0);
+    }
+    25%, 45% {
+        transform: translateX(-100%);
+    }
+    50%, 70% {
+        transform: translateX(-200%);
+    }
+    75%, 95% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 0px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+
+
+
+/*1. Small Phones (Max width: 480px)*/
+/* Default styles for desktops (1024px and up) */
+
+/* Small Phones (e.g., iPhone 5/SE, 360px width) */
+@media only screen and (max-width: 360px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    #quick-links, #featured {
+        flex-direction: column;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* Large Phones (e.g., iPhone 6/7/8 Plus, Galaxy S9) */
+@media only screen and (min-width: 361px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    #quick-links, #featured {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .link-item, .featured-item {
+        margin-bottom: 20px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+/* Tablets (768px - 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+        font-size: 16px;
+    }
+
+    #hero h2 {
+        font-size: 2.2rem;
+    }
+
+    #quick-links, #featured {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}
+
+/* Laptops (1025px - 1440px) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    body {
+        font-size: 20px;
+    }
+
+    nav ul li {
+        margin: 0 20px;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    #quick-links, #featured {
+        flex-direction: row;
+    }
+
+    footer {
+        font-size: 18px;
+    }
+}
