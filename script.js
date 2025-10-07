@@ -28,6 +28,11 @@ fixtures.forEach(fixture => {
 
 
 function toggleMenu() {
-    const navList = document.querySelector('.nav-list');
-    navList.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+    // Try to find the menu by class first, fallback to <nav><ul>
+    const navMenu = document.querySelector('.nav-list') || document.querySelector('nav ul');
+
+    if (navMenu) {
+        navMenu.classList.toggle('show');
+        navMenu.classList.toggle('active');
+    }
 }
